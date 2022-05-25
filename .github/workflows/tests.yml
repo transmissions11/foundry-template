@@ -22,6 +22,10 @@ jobs:
       - name: Check gas snapshots
         run: forge snapshot --check
 
+      - uses: actions/setup-node@v2
+        name: Install dev dependencies
+        run: npm install
+
       - name: Run lint check
         run: npm run lint:check
 
