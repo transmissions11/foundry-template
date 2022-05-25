@@ -7,6 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
 
       - name: Install Foundry
         uses: onbjerg/foundry-toolchain@v1
@@ -22,8 +23,7 @@ jobs:
       - name: Check gas snapshots
         run: forge snapshot --check
 
-      - uses: actions/setup-node@v2
-        name: Install dev dependencies
+      - name: Install dev dependencies
         run: npm install
 
       - name: Run lint check
