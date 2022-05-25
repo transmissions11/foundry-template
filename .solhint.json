@@ -1,0 +1,17 @@
+{
+  "extends": "solhint:recommended",
+  "plugins": ["prettier"],
+  "rules": {
+    "compiler-version": ["error", "0.8.13"],
+    "code-complexity": "warn",
+    "const-name-snakecase": "warn",
+    "function-max-lines": "warn",
+    "func-visibility": ["warn", { "ignoreConstructors": true }],
+    "max-line-length": ["warn", 160],
+    "avoid-suicide": "error",
+    "avoid-sha3": "warn",
+    "not-rely-on-time": "off",
+    "private-vars-leading-underscore": "warn",
+    "reason-string": ["warn", { "maxLength": 64 }]
+  }
+}
