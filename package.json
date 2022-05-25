@@ -18,6 +18,6 @@
   "scripts": {
     "solhint:check": "solhint --config ./.solhint.json '**.sol'",
     "lint": "prettier --write **.sol",
-    "lint-check": "npm run solhint:check"
+    "lint:check": "npm run solhint:check"
   }
 }
