@@ -2,21 +2,26 @@
 pragma solidity 0.8.15;
 
 import {DSTestPlus} from "solmate/test/utils/DSTestPlus.sol";
+import {DSInvariantTest} from "solmate/test/utils/DSInvariantTest.sol";
 
 import {SampleContract} from "../src/SampleContract.sol";
 
-contract SampleContractTest is DSTestPlus {
-    SampleContract sampleContract;
+contract SampleContractTest is DSTestPlus, DSInvariantTest {
+    SampleContract public sample;
 
     function setUp() public {
-        sampleContract = new SampleContract();
+        sample = new SampleContract();
+
+        addTargetContract(address(sample));
     }
 
-    function testFunc1() public {
-        sampleContract.func1(1337);
+    function testIncrement() public {
+        sample.increment();
+        assertEq(sample.counter(), 1);
+        assertEq(sample.counterX2(), 2);
     }
 
-    function testFunc2() public {
-        sampleContract.func2(1337);
+    function invariantTest() public {
+        assertEq(sample.counter() * 2, sample.counterX2());
     }
 }
