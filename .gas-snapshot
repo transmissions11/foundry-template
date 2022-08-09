@@ -1,2 +1,1 @@
-SampleContractTest:testFunc1() (gas: 534472)
-SampleContractTest:testFunc2() (gas: 534440)
+SampleContractTest:testIncrement(uint256) (runs: 256, μ: 50852, ~: 55983)

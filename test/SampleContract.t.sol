@@ -7,6 +7,8 @@ import {DSInvariantTest} from "solmate/test/utils/DSInvariantTest.sol";
 import {SampleContract} from "../src/SampleContract.sol";
 
 contract SampleContractTest is DSTestPlus, DSInvariantTest {
+    event Incremented(uint256 counter);
+
     SampleContract public sample;
 
     function setUp() public {
@@ -15,13 +17,14 @@ contract SampleContractTest is DSTestPlus, DSInvariantTest {
         addTargetContract(address(sample));
     }
 
-    function testIncrement() public {
-        sample.increment();
-        assertEq(sample.counter(), 1);
-        assertEq(sample.counterX2(), 2);
+    function testIncrement(address caller) public {
+        hevm.startPrank(address(caller));
+
+        hevm.expectRevert("ONLY_OWNER");
+        sample.incrementBy(1);
     }
 
-    function invariantTest() public {
+    function invariantCounter() public {
         assertEq(sample.counter() * 2, sample.counterX2());
     }
 }
