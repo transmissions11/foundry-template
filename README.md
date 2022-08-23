@@ -1,4 +1,4 @@
-# foundry-template • [![CI](https://github.com/transmissions11/foundry-template/actions/workflows/tests.yml/badge.svg)](https://github.com/transmissions11/foundry-template/actions/workflows/CI.yml)
+# foundry-template • [![CI](https://github.com/transmissions11/foundry-template/actions/workflows/tests.yml/badge.svg)](https://github.com/transmissions11/foundry-template/actions/workflows/tests.yml)
 
 Streamlined template for getting started with Foundry and Solmate.
 
