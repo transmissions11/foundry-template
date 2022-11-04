@@ -13,6 +13,9 @@ jobs:
         with:
           version: nightly
 
+      - name: Check formatting
+        run: forge fmt --check
+
       - name: Install dependencies
         run: forge install
 
