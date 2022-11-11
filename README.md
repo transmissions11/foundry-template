@@ -25,3 +25,11 @@ forge test
 ```sh
 forge snapshot
 ```
+
+### Pre-commit Hook
+
+We recommend installing the accompanying pre-commit hook to automatically run `forge fmt` and `forge snapshot` on each commit:
+
+```bash
+cp hooks/pre-commit .git/hooks/pre-commit
+```
